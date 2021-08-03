@@ -1,4 +1,3 @@
-import os
 import sys
 import pandas as pd
 import numpy as np
@@ -6,7 +5,6 @@ from tqdm import tqdm
 
 from vpython import *
 
-# SIZE = 800
 FRAME_RATE = 30     # frames per second
 
 
@@ -29,10 +27,6 @@ def animate():
         for j in range(N):
             balls[j].pos = vector(x[j], y[j], z[j])
             balls[j].radius = mass[j]/2 
-
-        # scene.autoscale=False
-        # os.system('screencapture -D 3 products/frames/{}.png'.format(int((i+1)/N)))
-
 
 
 if __name__ == '__main__':

@@ -28,10 +28,6 @@ def figure_eight():
     bodies.columns = 'x', 'y', 'z', 'vx', 'vy', 'vz', 'mass'
     bodies.to_csv('products/init.csv', index=False)
 
-
-
-
-
 # For now, this just randomly places the bodies in space.
 def main():
     bodies = np.zeros((N, 7))

@@ -17,7 +17,6 @@ def clear(win):
         item.undraw()
 
 
-# from https://stackoverflow.com/questions/8530524/working-with-the-python-graphics-module-is-there-any-way-to-save-the-current-wi
 def save_frame(win, i):
     # saves the current TKinter object in postscript format
     win.postscript(file="products/frames/.image.eps", colormode='color')
@@ -25,14 +24,12 @@ def save_frame(win, i):
     img = NewImage.open("products/frames/.image.eps")
     img.save("products/frames/{}.jpeg".format(i, "jpeg"), quality=100, subsampling=0)
 
-
-
 def animate():
     df = pd.read_csv(sys.argv[1], header=None)
     df.columns = 't', 'id', 'x', 'y', 'z', 'vx', 'vy', 'vz', 'mass'
     N = max(df.id + 1)
 
-    win = GraphWin('{} Body Simulator'.format(N), WIDTH, HEIGHT, autoflush=False) # give title and dimensions
+    win = GraphWin('{} Body Simulator'.format(N), WIDTH, HEIGHT, autoflush=False)
     for i in trange(0, df.shape[0], 1):
 
         if i % N == 0:

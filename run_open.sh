@@ -27,18 +27,7 @@ gcc-7 -Ofast -Wall -std=c99 -fopenmp \
 
 nice ./nbody.o $INIT_FILE > $OUTPUT_FILE
 
-if [ "$1" = "v" ]; then 
-    python3 animator_vpython.py $OUTPUT_FILE
-    open $OUTPUT_MOVIE
-fi
+python3 animator_vpython.py $OUTPUT_FILE
+open $OUTPUT_MOVIE
 
-if [ "$1" = "m" ]; then
-    rm products/frames/*
-
-    python3 animator_matplotlib.py $OUTPUT_FILE
-
-    ffmpeg -r 30 -f image2 -s 1920x1080 -i products/frames/%d.png \
-        -vf "crop=trunc(iw/2)*2:trunc(ih/2)*2" -vcodec libx264 -crf 25  \
-        -pix_fmt yuv420p -y $OUTPUT_MOVIE
-fi
 
