@@ -2,7 +2,7 @@
 
 This is an n-body simulation visualizer written with C and Python. It implements the [Barnes-Hut Algorithm](https://en.wikipedia.org/wiki/Barnes%E2%80%93Hut_simulation) to simulate an open or globular star cluster. 
 
-## Examples
+## Demo
 ![Alt Text](demo/globular_gif.gif)
 
 [Globular Cluster](https://en.wikipedia.org/wiki/Globular_cluster)
